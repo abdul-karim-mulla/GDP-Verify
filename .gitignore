@@ -1,0 +1,67 @@
+# =====================
+# Dependencies
+# =====================
+/vendor/
+/node_modules/
+
+# Composer
+composer.phar
+composer.lock
+
+# =====================
+# Environment files
+# =====================
+.env
+.env.local
+.env.*.local
+
+# =====================
+# Logs
+# =====================
+*.log
+logs/
+log/
+
+# =====================
+# Cache / runtime
+# =====================
+/cache/
+/tmp/
+/temp/
+/storage/
+/bootstrap/cache/
+
+# Symfony
+/var/
+
+# =====================
+# IDE / Editors
+# =====================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# PHPUnit
+# =====================
+/coverage/
+/.phpunit.result.cache
+
+# =====================
+# Uploads / user files (optional - depends on project)
+# =====================
+/public/uploads/
+/uploads/
+
+# =====================
+# Build tools (optional)
+# =====================
+/dist/
+/build/

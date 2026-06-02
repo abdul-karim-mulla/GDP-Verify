@@ -1,0 +1,24 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+$lang['ADMIN_CRUD_USERS_PAGE_TITLE']='Users Management';
+$lang['ADMIN_LOGOUT']='تسجيل خروج';
+$lang['HOME']='الرئيسية';
+$lang['ARABIC']='عربي';
+$lang['ENGLISH']='English';
+$lang['COC_TITLE']='شهادات الكفاءة (COC)';
+$lang['COP_TITLE']='شهادات الأهلية (COP)';
+$lang['ENDO_TITLE']='الإقرار بالاعتراف (I/10)';
+$lang['MC_TITLE']='الشهادات الصحية';
+$lang['INFORMATION']='لمزيد من المعلومات الرجاء الاتصال بنا';
+$lang['BACK_MAIN']='العودة إلى الموقع الرئيسي';
+$lang['SEARCH_BY']='بحث حسب الاسم أو رقم الشهادة';
+$lang['SEARCH_BY_ENDO']='بحث حسب الاسم او رقم الاقرار بالاعتراف';
+$lang['VERIFY']='تحقق';
+$lang['ERROR']='خطأ';
+$lang['FOUND']='تم إيجاد نتائج';
+$lang['NOT_FOUND']='لاتوجد نتائج';
+$lang['VIEW_CERT_TITLE']='عرض الشهادة';
+$lang['BACK_TO_SEARCH']='البحث عن شهادة أخرى';
+$lang['CHECK_CERTIFICATE']='التحقق من الشهادة';
+$lang['COP_MAIN1']='الشهادات الأهلية الصادرة عن المديرية العامة للموانئ';
+$lang['COP_MAIN2']='الشهادات الأهلية المعتمدة من قبل المديرية العامة للموانئ';

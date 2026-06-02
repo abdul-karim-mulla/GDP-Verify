@@ -1,0 +1,24 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+$lang['ADMIN_CRUD_USERS_PAGE_TITLE']='Users Management';
+$lang['ADMIN_LOGOUT']='Logout';
+$lang['HOME']='Home';
+$lang['ARABIC']='عربي';
+$lang['ENGLISH']='English';
+$lang['COC_TITLE']='Certificate Of Competency (COC) ';
+$lang['COP_TITLE']='Certificate Of Proficiency (COP) ';
+$lang['ENDO_TITLE']='Endorsement (I/10)';
+$lang['MC_TITLE']='Medical Certificate';
+$lang['INFORMATION']='For more information, please contact us ';
+$lang['BACK_MAIN']='Back to GDP Syria - website';
+$lang['SEARCH_BY']='Search by name or certificate number';
+$lang['SEARCH_BY_ENDO']='Search by name or endorsement number';
+$lang['VERIFY']='Verify';
+$lang['ERROR']='Error';
+$lang['FOUND']='Results Found';
+$lang['NOT_FOUND']='No Results Found';
+$lang['VIEW_CERT_TITLE']='View Certificate';
+$lang['BACK_TO_SEARCH']='Search another certificate ';
+$lang['CHECK_CERTIFICATE']='Certificate Verification';
+$lang['COP_MAIN1']='Certificate issued by General Directorate of Ports';
+$lang['COP_MAIN2']='Certificate authenticated by General Directorate of Ports';
