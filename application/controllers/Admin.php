@@ -802,7 +802,6 @@ $crud->unique_fields(array('certificate_no'));
     }
 
     public function login(){
-
 		//validate form input
 		$this->form_validation->set_rules('username', "Username", 'required');
 		$this->form_validation->set_rules('password', "Password", 'required');

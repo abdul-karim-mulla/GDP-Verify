@@ -15,11 +15,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dashboard/css/aristo.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dashboard/css/custom.css">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/custom/css/style.css">
-
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/custom/css/style.css">
     <script src="<?php echo base_url(); ?>assets/custom/js/jquery-2.1.4.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/custom/js/bootstrap.js"></script>
-    <script src="<?php echo base_url(); ?>assets/custom/js/jquery.timer.js"></script>
+    <script src="<?php echo base_url(); ?>assets/custom/js/jquery.timer.js"></script> -->
    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
