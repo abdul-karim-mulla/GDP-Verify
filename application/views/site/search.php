@@ -65,6 +65,8 @@
                         <?php if($action != 'mc'): ?>
                         <th style="text-align: left">Capacity</th>
                         <?php endif; ?>
+                        <th style="text-align: left">Created By</th>
+                        <th style="text-align: left">Created On</th>
                         <th> </th>
                     </tr>
                     </thead>
@@ -75,6 +77,8 @@
                         if($action != 'mc'):
                             echo "<td>".$cert->capacity."</td>";
                         endif;
+                        echo "<td>".(isset($cert->created_by) ? $cert->created_by : '')."</td>";
+                        echo "<td>".(isset($cert->created_at) ? $cert->created_at : '')."</td>";
                         echo '<td><a href="'.site_url('site/view/'.$action.'/'.$cert->{$action.'_id'}).'">View</a></td>';
                         echo '</tr>';
                     } ?>

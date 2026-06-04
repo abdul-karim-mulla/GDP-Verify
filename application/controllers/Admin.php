@@ -61,6 +61,19 @@ class Admin extends CI_Controller {
     			$crud->set_subject('COC');
                 //$crud->set_relation('medical_cert_id','medical_certificates','certificate_no');
 
+                // who is creating this certificate
+                $creator = $this->ion_auth->user()->row();
+                $created_by = trim($creator->first_name).' ('.$creator->username.')';
+
+                // fill audit fields on insert; never editable in the form
+                $crud->callback_before_insert(function($post_array) use ($created_by){
+                    $post_array['created_by'] = $created_by;
+                    $post_array['created_at'] = date('Y-m-d H:i:s');
+                    return $post_array;
+                });
+                $crud->unset_add_fields('created_by','created_at');
+                $crud->unset_edit_fields('created_by','created_at');
+
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
                 }
@@ -94,11 +107,13 @@ class Admin extends CI_Controller {
                 $crud->display_as('limitations','Limitations');
                 $crud->display_as('status','Status of Certificate');
                 $crud->display_as('medical_cert_id','Medical Certificate No.');
+                $crud->display_as('created_by','Created By');
+                $crud->display_as('created_at','Created On');
                 $crud->required_fields('certificate_no','full_name', 'date_of_birth', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity');
 $crud->unique_fields(array('certificate_no'));
 
 
-                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status');
+                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status', 'created_by', 'created_at');
 
                 $crud->field_type('cert_function','multiselect',
                 array('Navigation' => 'Navigation',
@@ -168,6 +183,19 @@ $crud->unique_fields(array('certificate_no'));
     			$crud->set_subject('COP');
                 //$crud->set_relation('medical_cert_id','medical_certificates','certificate_no');
 
+                // who is creating this certificate
+                $creator = $this->ion_auth->user()->row();
+                $created_by = trim($creator->first_name).' ('.$creator->username.')';
+
+                // fill audit fields on insert; never editable in the form
+                $crud->callback_before_insert(function($post_array) use ($created_by){
+                    $post_array['created_by'] = $created_by;
+                    $post_array['created_at'] = date('Y-m-d H:i:s');
+                    return $post_array;
+                });
+                $crud->unset_add_fields('created_by','created_at');
+                $crud->unset_edit_fields('created_by','created_at');
+
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
                 }
@@ -200,11 +228,13 @@ $crud->unique_fields(array('certificate_no'));
                 $crud->display_as('limitations','Limitations');
                 $crud->display_as('status','Status of Certificate');
                 $crud->display_as('medical_cert_id','Medical Certificate No.');
+                $crud->display_as('created_by','Created By');
+                $crud->display_as('created_at','Created On');
 
                 $crud->required_fields('certificate_no','full_name', 'date_of_birth', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity');
 $crud->unique_fields(array('certificate_no'));
 
-                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status');
+                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status', 'created_by', 'created_at');
 
                 $crud->field_type('cert_function','multiselect',
                 array('Navigation' => 'Navigation',
@@ -274,6 +304,19 @@ $crud->unique_fields(array('certificate_no'));
     			$crud->set_subject('Endorsement Certificate');
                 //$crud->set_relation('medical_cert_id','medical_certificates','certificate_no');
 
+                // who is creating this certificate
+                $creator = $this->ion_auth->user()->row();
+                $created_by = trim($creator->first_name).' ('.$creator->username.')';
+
+                // fill audit fields on insert; never editable in the form
+                $crud->callback_before_insert(function($post_array) use ($created_by){
+                    $post_array['created_by'] = $created_by;
+                    $post_array['created_at'] = date('Y-m-d H:i:s');
+                    return $post_array;
+                });
+                $crud->unset_add_fields('created_by','created_at');
+                $crud->unset_edit_fields('created_by','created_at');
+
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
                 }
@@ -308,11 +351,13 @@ $crud->unique_fields(array('certificate_no'));
                 $crud->display_as('limitations','Limitations');
                 $crud->display_as('status','Status of Certificate');
                 $crud->display_as('medical_cert_id','Medical Certificate No.');
+                $crud->display_as('created_by','Created By');
+                $crud->display_as('created_at','Created On');
 
                 $crud->required_fields('endorsement_no', 'certificate_no', 'issuing_party','full_name', 'date_of_birth', 'date_of_issue', 'date_of_expiry', 'capacity');
 $crud->unique_fields(array('certificate_no', 'endorsement_no'));
 
-                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status');
+                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'regulation_no', 'capacity', 'status', 'created_by', 'created_at');
 
                 $crud->field_type('cert_function','multiselect',
                 array('Navigation' => 'Navigation',
@@ -380,6 +425,19 @@ $crud->unique_fields(array('certificate_no', 'endorsement_no'));
     			$crud->set_table('medical_certificates');
     			$crud->set_subject('Medical Certificate');
 
+                // who is creating this certificate
+                $creator = $this->ion_auth->user()->row();
+                $created_by = trim($creator->first_name).' ('.$creator->username.')';
+
+                // fill audit fields on insert; never editable in the form
+                $crud->callback_before_insert(function($post_array) use ($created_by){
+                    $post_array['created_by'] = $created_by;
+                    $post_array['created_at'] = date('Y-m-d H:i:s');
+                    return $post_array;
+                });
+                $crud->unset_add_fields('created_by','created_at');
+                $crud->unset_edit_fields('created_by','created_at');
+
                 if($this->ion_auth->user()->row()->can_manage == 'tartus'){
                     $crud->where('city', 'tartus');
                 }else if($this->ion_auth->user()->row()->can_manage == 'lattakia'){
@@ -414,6 +472,8 @@ $crud->unique_fields(array('certificate_no', 'endorsement_no'));
                 $crud->display_as('date_of_expiry','Date of Expiry');
                 $crud->display_as('limitations','Limitations');
                 $crud->display_as('city','City');
+                $crud->display_as('created_by','Created By');
+                $crud->display_as('created_at','Created On');
 
                 if($this->ion_auth->user()->row()->can_manage == 'tartus'){
                     $crud->field_type('city','dropdown',
@@ -438,7 +498,7 @@ $crud->unique_fields(array('certificate_no', 'endorsement_no'));
                 $crud->required_fields('certificate_no', 'full_name', 'date_of_birth', 'date_of_issue', 'date_of_expiry', 'city');
 $crud->unique_fields(array('certificate_no'));
 
-                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry');
+                $crud->columns('certificate_no','full_name', 'date_of_issue', 'date_of_expiry', 'created_by', 'created_at');
 
     			$output = $crud->render();
 
