@@ -71,8 +71,9 @@ class Admin extends CI_Controller {
                     $post_array['created_at'] = date('Y-m-d H:i:s');
                     return $post_array;
                 });
-                $crud->unset_add_fields('created_by','created_at');
-                $crud->unset_edit_fields('created_by','created_at');
+                // hide from the add/edit forms but keep them in the insert
+                $crud->field_type('created_by','invisible');
+                $crud->field_type('created_at','invisible');
 
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
@@ -193,8 +194,9 @@ $crud->unique_fields(array('certificate_no'));
                     $post_array['created_at'] = date('Y-m-d H:i:s');
                     return $post_array;
                 });
-                $crud->unset_add_fields('created_by','created_at');
-                $crud->unset_edit_fields('created_by','created_at');
+                // hide from the add/edit forms but keep them in the insert
+                $crud->field_type('created_by','invisible');
+                $crud->field_type('created_at','invisible');
 
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
@@ -314,8 +316,9 @@ $crud->unique_fields(array('certificate_no'));
                     $post_array['created_at'] = date('Y-m-d H:i:s');
                     return $post_array;
                 });
-                $crud->unset_add_fields('created_by','created_at');
-                $crud->unset_edit_fields('created_by','created_at');
+                // hide from the add/edit forms but keep them in the insert
+                $crud->field_type('created_by','invisible');
+                $crud->field_type('created_at','invisible');
 
                 if($this->ion_auth->user()->row()->is_admin != '1'){
                     $crud->unset_read();
@@ -435,8 +438,9 @@ $crud->unique_fields(array('certificate_no', 'endorsement_no'));
                     $post_array['created_at'] = date('Y-m-d H:i:s');
                     return $post_array;
                 });
-                $crud->unset_add_fields('created_by','created_at');
-                $crud->unset_edit_fields('created_by','created_at');
+                // hide from the add/edit forms but keep them in the insert
+                $crud->field_type('created_by','invisible');
+                $crud->field_type('created_at','invisible');
 
                 if($this->ion_auth->user()->row()->can_manage == 'tartus'){
                     $crud->where('city', 'tartus');
